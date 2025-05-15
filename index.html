@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+  <style>
+    .error{
+      color: orangered;
+      
+    }
+  </style>
+</head>
+<body data-bs-theme="dark">
+  
+<div class="container">
+    <form onsubmit="userData(); return false;">
+    <h2>Validation Form</h2>
+    <label class="form-label" for="">Name</label>
+    <input class="form-control" type="text" name="" id="name" placeholder="Username">
+    <span class="error" id="nameError"></span><br>
+    <label class="form-label" for="">Password</label>
+    <input class="form-control" type="password" name="" id="pass" placeholder="Password">
+    <span class="error" id="passError"></span><br>
+
+    <!-- Textarea -->
+     <label for="" class="form-label">Description</label><br>
+     <textarea class="form-control" name="" id="remarks"></textarea>
+     <span class="error" id="remarksError"></span><br><br>
+
+     <!-- Radio -->
+
+     <input type="radio" name="gen" id="" value="Male">
+     <label for="" class="form-label">Male</label>
+     <input type="radio" name="gen" id="" value="Female">
+     <label for="" class="form-label">Female</label>
+     <input type="radio" name="gen" id="" value="Other">
+     <label for="" class="form-label">Other</label><br>
+     <span class="error" id="genderError"></span><br><br>
+
+     <!-- Checkbox -->
+      <input type="checkbox" class="form-check-input" name="course" id="" value="SSC">
+      <label for="" class="form-check-label">SSC</label>
+      <input type="checkbox" class="form-check-input" name="course" id="" value="HSC">
+      <label for="" class="form-check-label">HSC</label>
+      <input type="checkbox" class="form-check-input" name="course" id="" value="BBA">
+      <label for="" class="form-check-label">BBA</label>
+      <input type="checkbox" class="form-check-input" name="course" id="" value="MBA">
+      <label for="" class="form-check-label">MBA</label><br>
+      <span class="error" id="courseError"></span><br><br>
+
+      <!-- dropdown -->
+
+      <label for="" class="form-label">Dropdown</label><br>
+      <select name="" id="locate" class="form-control">
+        <option value="">Select</option>
+        <option value="BD">BD</option>
+        <option value="SG">SG</option>
+        <option value="HK">HK</option>
+        <option value="JP">JP</option>
+        <option value="USA">USA</option>
+      </select>
+      <span class="error" id="locateError"></span><br>
+
+      <!-- file -->
+       <label for="" class="form-label">File</label><br>
+       <input type="file" name="" id=""><br><br>
+
+       <!-- Button -->
+
+       <button type="submit" class="btn btn-outline-primary">Submit</button>
+       <button type="reset" class="btn btn-outline-danger ms-3">Reset</button>
+
+  </form>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+</html>
