@@ -16,10 +16,10 @@
 <body data-bs-theme="dark">
   
 <div class="container">
-    <form onsubmit="userData(); return false;">
+    <form onsubmit="return userData();">
     <h2>Validation Form</h2>
     <label class="form-label" for="">Name</label>
-    <input class="form-control" type="text" name="" id="name" placeholder="Username">
+    <input class="form-control" type="text" id="name" placeholder="Username">
     <span class="error" id="nameError"></span><br>
     <label class="form-label" for="">Password</label>
     <input class="form-control" type="password" name="" id="pass" placeholder="Password">

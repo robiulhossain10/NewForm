@@ -12,15 +12,18 @@ function userData() {
     let valid = true;
 
     if(Name === ""){
-        document.getElementById('nameError').innerHTML = "Name is Required"
+        document.getElementById('nameError').innerHTML = "Name is Required";
+        document.getElementById('name').style.border = '1px solid red';
         valid = false;
     } 
      if(contact === "") {
-        document.getElementById('passError').innerHTML = "Password is Required"
+        document.getElementById('passError').innerHTML = "Password is Required";
+        document.getElementById('pass').style.border = '1px solid red';
         valid = false;
     }
          if(remarks === "") {
-        document.getElementById('remarksError').innerHTML = "Remarks is Required"
+        document.getElementById('remarksError').innerHTML = "Remarks is Required";
+        document.getElementById('remarks').style.border = '1px solid red';
         valid = false;
     }
      if(!gender) {
@@ -29,10 +32,12 @@ function userData() {
     }
      if(course.length === 0) {
         document.getElementById('courseError').innerHTML = "Course is Required"
+        document.querySelector('input[name="course"]').style.border = '1px solid red';
        valid = false;
     }
      if(locate === "") {
         document.getElementById('locateError').innerHTML = "Location is Required"
+        document.getElementById('locate').style.border = '1px solid red';
         valid = false;
     }
 
@@ -55,7 +60,7 @@ function userData() {
 
     console.log(output);
     
-    const newWindow = window.open("", "_blank", "width=600,height=400,");
+    const newWindow = window.open("", "_blank", "width=600,height=400");
     newWindow.document.writeln(output);
 
 
