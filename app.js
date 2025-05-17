@@ -194,8 +194,9 @@ function validatePass () {
     PassStyle.style.border = '1px solid red'
     return false;
   } else if (Pass.length < 8 || Pass.length > 25) {
-    errorPass.innerText = 'Minimum 8 to 15 characters'
-    PassStyle.style.border = '1px solid red'
+    errorPass.innerText = 'Minimum 8 to 15 characters';
+    errorPass.style.color = 'red';
+    PassStyle.style.border = '1px solid red';
     return false;
   }
   else{
