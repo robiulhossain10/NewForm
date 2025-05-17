@@ -20,29 +20,29 @@ function userData() {
 
   let valid = true;
 
-  // if (!Name) {
-  //     errorMSG.innerHTML = 'Please Fill Name';
-  //     document.getElementById('names').style.border = '1px solid red';
-  //     valid = false;
-  // } else if (Name !== Name.toUpperCase()) {
-  //     errorMSG.innerHTML = 'Name must be in UPPERCASE only';
-  //     document.getElementById('names').style.border = '1px solid red';
-  //     valid = false;
-  // } else {
-  //     errorMSG.innerHTML = 'Name is Valid'
-  //     errorMSG.style.color = 'green'
-  //     document.getElementById('names').style.border = '1px solid green';
-  // }
+  if (!Name) {
+      errorMSG.innerHTML = 'Please Fill Name';
+      document.getElementById('names').style.border = '1px solid red';
+      valid = false;
+  }
 
-  //   if (remarks === "") {
-  //     document.getElementById("errorRMS").innerHTML = "Please Fill Remarks";
-  //     document.getElementById("remarks").style.border = "1px solid red";
-  //     valid = false;
-  //   }
-  //   if (!course) {
-  //     document.getElementById("errorCRS").innerHTML = "Please Fill Course";
-  //     valid = false;
-  //   }
+  if (!passWord) {
+    errorPass.innerHTML = "Please Fill Password";
+    errorPass.style.color = "orangered";
+    document.getElementById('passWord').style.border = '1px solid red';
+    valid = false;
+  }
+
+    if (remarks === "") {
+      document.getElementById("errorRMS").innerHTML = "Please Fill Remarks";
+      document.getElementById("remarks").style.border = "1px solid red";
+      valid = false;
+    }
+    if (!course.length) {
+      document.getElementById("errorCRS").innerHTML = "Please Fill Course";
+      errorCRS.style.color = "orangered";
+      valid = false;
+    }
   if (!gender) {
     document.getElementById("errorGEN").innerHTML = "Please Fill Gender";
     valid = false;
