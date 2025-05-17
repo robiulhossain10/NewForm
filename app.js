@@ -1,5 +1,6 @@
 function userData() {
   const Name = document.getElementById("names").value.trim();
+  const email = document.getElementById("email").value.trim();
   const passWord = document.getElementById("passWord").value.trim();
   const remarks = document.getElementById("remarks").value.trim();
   const gender = document.querySelector('input[name="gen"]:checked');
@@ -10,16 +11,17 @@ function userData() {
     .map((course) => course.value)
     .join(", ");
 
-  let valid = true;
 
-  valid = validateName();
-  valid = validatePass ();
-  valid = validateRemarks();
-  valid = validateGender();
-  valid = validateCourse();
-   valid = validateLocate();
 
-  if (valid == false) {
+  let valid = validateName();
+              validatePass() ;
+              validateRemarks() ;
+              validateGender() ;
+              validateCourse() ;
+              validateLocate();
+              validateEmail();
+
+  if (!valid) {
     return false;
   }
 
@@ -39,6 +41,7 @@ function userData() {
 //All addEvent Listener List
 
 document.getElementById("names").addEventListener("input", validateName);
+document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passWord").addEventListener("input", validatePass);
 document.getElementById("remarks").addEventListener("input", validateRemarks);
 document.querySelectorAll('input[name="gen"]').forEach((radio) => {
@@ -69,7 +72,7 @@ function validateName() {
     errorMSG.innerHTML = "নাম সঠিক";
     errorMSG.style.color = "green";
     document.getElementById("names").style.border = "1px solid green";
-    return false;
+    return true;
   }
 }
 
@@ -95,7 +98,7 @@ function validatePass () {
     errorPass.innerText = 'Password is Valid';
     errorPass.style.color = 'green'
     PassStyle.style.border = '1px solid green'
-    return false;
+    return true;
   }
 }
 
@@ -114,7 +117,7 @@ function validateGender() {
   } else {
     errorGEN.innerText = "সঠিক";
     errorGEN.style.color = "green";
-    return false;
+    return true;
   }
 }
 
@@ -139,7 +142,7 @@ function validateRemarks(){
     errorRMS.innerText = 'Success'
     errorRMS.style.color = 'green'
     remarksSTYLE.style.border = '1px solid green';
-    return false;
+    return true;
   }
 }
 
@@ -156,7 +159,7 @@ function validateCourse() {
   } else {
     errorCRS.innerHTML = 'Success';
     errorCRS.style.color = 'green';
-    return false;
+    return true;
   }
 }
 
@@ -176,9 +179,60 @@ function validateLocate() {
     errorLC.innerHTML = 'Location Valid';
     errorLC.style.color = 'green';
     locateStyle.style.border = '1px solid green'
-    return false;
+    return true;
   }
 }
+
+//Validate Email
+
+// function validateEmail() {
+//   const email = document.getElementById('email').value.trim();
+//   const emailStyle = document.getElementById('email');
+//   const errorEML = document.getElementById('errorEML');
+
+//   if(!email) {
+//     errorEML.innerHTML = 'Please Insert Email';
+//     errorEML.style.color = 'red';
+//     emailStyle.style.border = '1px solid red'
+//     return false
+//   } else{
+//     if(email.includes('@') && email.includes('.')) {
+//       errorEML.innerHTML = 'Success';
+//       errorEML.style.color = 'green';
+//     } else{
+//       errorEML.innerHTML = 'Invalid Email Format';
+//       errorEML.style.color = 'red';
+//     }
+//     return true
+//   }
+// }
+function validateEmail() {
+  const email = document.getElementById('email').value.trim();
+  const emailStyle = document.getElementById('email');
+  const errorEML = document.getElementById('errorEML');
+
+  const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  if(!email) {
+    errorEML.innerHTML = 'Please Insert Email';
+    errorEML.style.color = 'red';
+    emailStyle.style.border = '1px solid red'
+    return false
+  } else if(!emailPattern.test(email)){
+    
+      errorEML.innerHTML = 'Invalid Email Format';
+      errorEML.style.color = 'red';
+      emailStyle.style.border = '1px solid red'
+      return false;
+    }
+     else{
+      errorEML.innerHTML = 'Success';
+      errorEML.style.color = 'green';
+      emailStyle.style.border = '1px solid green'
+      return true
+    }
+    
+  }
 
 
 
