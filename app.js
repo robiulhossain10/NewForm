@@ -14,12 +14,13 @@ function userData() {
 
 
   let valid = validateName() &&
+              validateEmail() &&
               validatePass()  &&
               validateRemarks()  &&
               validateGender()  &&
               validateCourse()  &&
-              validateLocate() &&
-              validateEmail()
+              validateLocate() 
+              
 
   if (!valid) {
     return false;
