@@ -13,13 +13,13 @@ function userData() {
 
 
 
-  let valid = validateName();
-              validatePass() ;
-              validateRemarks() ;
-              validateGender() ;
-              validateCourse() ;
-              validateLocate();
-              validateEmail();
+  let valid = validateName() &&
+              validatePass()  &&
+              validateRemarks()  &&
+              validateGender()  &&
+              validateCourse()  &&
+              validateLocate() &&
+              validateEmail()
 
   if (!valid) {
     return false;
@@ -27,6 +27,7 @@ function userData() {
 
   let output = `<h2>Trainee User Data</h2>
                 <p><strong>Name:</strong> ${Name} </p>
+                <p><strong>Email:</strong> ${email} </p>
                 <p><strong>Password:</strong> ${passWord} </p>
                 <p><strong>Remarks:</strong> ${remarks} </p>
                 <p><strong>Gender:</strong> ${gender.value} </p>
@@ -34,7 +35,7 @@ function userData() {
                 <p><strong>Course:</strong> ${selectedCourse} </p>`;
 
   let newWindow = window.open("", "_blank", "width=600,height=500");
-  newWindow.document.writeln(output);
+  newWindow.document.body.innerHTML = output;
 }
 
 
@@ -59,17 +60,17 @@ function validateName() {
   const errorMSG = document.getElementById("errorMSG");
 
   if (Name !== Name.toUpperCase()) {
-    errorMSG.innerHTML = "নাম অবশ্যই বড় হাতের অক্ষরে হতে হবে";
+    errorMSG.innerHTML = "Name UpperCase Only";
     errorMSG.style.color = "red";
     document.getElementById("names").style.border = "1px solid red";
     return false;
   } else if (Name.length < 8 || Name.length > 20) {
-    errorMSG.innerHTML = "নাম অবশ্যই ৮-১৬ অক্ষর হতে হবে";
+    errorMSG.innerHTML = "Name Atleast 8-16 Must Be";
     errorMSG.style.color = "red";
     document.getElementById("names").style.border = "1px solid red";
     return false;
   } else {
-    errorMSG.innerHTML = "নাম সঠিক";
+    errorMSG.innerHTML = "Name Valid";
     errorMSG.style.color = "green";
     document.getElementById("names").style.border = "1px solid green";
     return true;
@@ -217,7 +218,7 @@ function validateEmail() {
     errorEML.innerHTML = 'Please Insert Email';
     errorEML.style.color = 'red';
     emailStyle.style.border = '1px solid red'
-    return false
+    return false;
   } else if(!emailPattern.test(email)){
     
       errorEML.innerHTML = 'Invalid Email Format';
@@ -233,6 +234,7 @@ function validateEmail() {
     }
     
   }
+
 
 
 
