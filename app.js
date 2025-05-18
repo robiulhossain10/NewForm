@@ -112,11 +112,11 @@ function validateGender() {
   const errorGEN = document.getElementById("errorGEN");
 
   if (!gender) {
-    errorGEN.innerHTML = "দয়া করে লিঙ্গ নির্বাচন করুন";
+    errorGEN.innerHTML = "Select Gender";
     errorGEN.style.color = "red";
     return false;
   } else {
-    errorGEN.innerText = "সঠিক";
+    errorGEN.innerText = "Success";
     errorGEN.style.color = "green";
     return true;
   }
